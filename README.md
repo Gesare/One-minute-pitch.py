@@ -4,7 +4,7 @@
 
 
 # Author
-  ** wwwwww **
+  ** Gesare **
 
 
 ## Link to Live Site 
@@ -13,8 +13,7 @@ jjjjjjjj
 
 
 ## Description
-  This is an application that allows a user to create a pitch depending on a certain category
-  and add pitch content. A user can also be able to comment and vote on another user's pitches.
+ In life, you only have 60 seconds to impress someone. 1 minute can make or break you. This is an application that allows users to use that one minute wisely. The users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them. 
 
 ## Installation Requirements
   Clone this repository and navigate to the folder.
