@@ -28,9 +28,6 @@ def index():
     return render_template('home.html', title = title, pitch = pitch, pickuplines=pickuplines, interviewpitch= interviewpitch, promotionpitch = promotionpitch, productpitch = productpitch, upvotes=upvotes)
     
 
-
-
-
 @main.route('/pitches/new/', methods = ['GET','POST'])
 @login_required
 def new_pitch():
