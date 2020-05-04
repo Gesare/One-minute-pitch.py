@@ -84,13 +84,6 @@ def upvote(pitch_id):
     new_upvote.save_upvotes()
     return redirect(url_for('main.index'))
 
-
-
-#    new_upvote = Upvote(user=current_user, pitch=pitch, vote_number=1)
-#    new_vote.save_vote()
-# return redirect(url_for('main.index'))
-
-
 @main.route('/pitch/downvote/<int:pitch_id>/downvote', methods = ['GET', 'POST'])
 @login_required
 def downvote(pitch_id):
