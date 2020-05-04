@@ -1,12 +1,6 @@
 # Life Pitch
 
-## 
-
-### 
-
-
-### Author 
-  #### Gesare
+### By **Gesare Ombati**
 
 
 ## Link to Live Site 
@@ -56,9 +50,8 @@
   * Postgressql
   * Heroku
 
-## Known Bugs
-No known bugs so far
-
+## TDD
+I test my project using Python3.6
 
 ## Support and contact details
 If you may need more information please contact the me through Gesare@gmail.com.
