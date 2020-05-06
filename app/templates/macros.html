@@ -10,24 +10,20 @@
 				<blockquote class="blockquote mb-0">
 					<h2>{{category.description}}</h2>
 					<footer class="blockquote-footer"> Posted by {{category.user.username}}</footer>
-				</blockquote>
-				
-				<a href="{{url_for('main.new_comment',pitch_id = category.id)}}" class="btn btn-info"> Comment here</a>
+                </blockquote>
+                <a href="{{url_for('main.new_comment',pitch_id = category.id)}}" class="btn btn-info"> Add a comment</a>
 				<a href="{{url_for('main.upvote',pitch_id = category.id)}}" class= "btn btn-primary btn-sm"><i></i>Upvote <span>{{category.upvotes.count()}}</span></a>
 				<a href="{{url_for('main.downvote',pitch_id = category.id)}}" class= "btn btn-danger btn-sm"><i class="far fa-thumbs-up"></i>Downvote <span>{{category.downvotes.count()}}</span></a>
-
-
 			</div>
 		</div>
 
 		</div>
 		{% endfor %}
 	{% else %}
+		<p>no pitches</p>
 	{% endif %}
 </div>
 {% endmacro %}
-
-
 
 {% macro displayComment(comments) %}
 <ul>
@@ -46,7 +42,4 @@
 
 	</ul>
 	
-			
-
-
 {% endmacro %}

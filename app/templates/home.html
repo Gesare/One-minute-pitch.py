@@ -5,7 +5,7 @@
 {% endblock %}
 
   {% block content %}
-    <div class="container">
+    <div class="container welcome">
       <h3 style="color: green;text-align: center">Pitch Categories</h3>
       <br>
       <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
@@ -25,17 +25,17 @@
 
       <div class="tab-content">
         <div id="promotion" class="container tab-pane active"><br>
-          {{ macro.display(productpitch) }}
+          {{ macro.display(promotionpitch) }}
           
         </div>
         <div id="pickupline" class="container tab-pane fade"><br>
-          {{ macro.display(interviewpitch) }}
+          {{ macro.display(pickuppitch) }}
         </div>
         <div id="interview" class="container tab-pane fade"><br>
-          {{ macro.display(pickuplines)}}
+          {{ macro.display(interviewlines)}}
         </div>
         <div id="product" class="container tab-pane fade"><br>
-          {{ macro.display(promotionpitch) }}
+          {{ macro.display(productpitch) }}
         </div>
         
       </div>

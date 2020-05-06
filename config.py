@@ -5,8 +5,10 @@ class Config:
     '''
     General configuration parent class
     '''
-    SECRET_KEY = 'powerfulsecretkey'
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    
+
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
@@ -21,7 +23,7 @@ class ProdConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-
+    pass
 class TestConfig(Config):
     '''
     Testing configuration child class
@@ -29,6 +31,8 @@ class TestConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings 
     '''
+    SQLALCHEMY_DATABASE_URI="postgresql+psycopg2://gesare:ombati@localhost/pitches_tests"
+    DEBUG=True
     pass
 
 class DevConfig(Config):
@@ -38,7 +42,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://liz:lizzie@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://gesare:ombati@localhost/pitches'
     DEBUG = True
 
 

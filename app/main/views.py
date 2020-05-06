@@ -22,10 +22,10 @@ def index():
     promotionpitch = Pitch.query.filter_by(category = "promotionpitch")
     productpitch = Pitch.query.filter_by(category = "productpitch")
 
-    upvotes = Upvote.get_all_upvotes(pitch_id=Pitch.id)
+
     
 
-    return render_template('home.html', title = title, pitch = pitch, pickuplines=pickuplines, interviewpitch= interviewpitch, promotionpitch = promotionpitch, productpitch = productpitch, upvotes=upvotes)
+    return render_template('home.html', title = title, pickuplines=pickuplines, interviewpitch= interviewpitch, promotionpitch = promotionpitch, productpitch = productpitch)
     
 
 @main.route('/pitches/new/', methods = ['GET','POST'])
@@ -47,6 +47,7 @@ def new_pitch():
         return redirect(url_for('main.index'))
     return render_template('pitches.html',form=form)
 
+    
 
 
 
@@ -68,7 +69,7 @@ def new_comment(pitch_id):
     all_comments = Comment.query.filter_by(pitch_id = pitch_id).all()
     return render_template('comments.html', form = form, comment = all_comments, pitch = pitch )
 
-
+#upvote function
 @main.route('/pitch/upvote/<int:pitch_id>/upvote', methods = ['GET', 'POST'])
 @login_required
 def upvote(pitch_id):
@@ -84,6 +85,9 @@ def upvote(pitch_id):
     new_upvote.save_upvotes()
     return redirect(url_for('main.index'))
 
+
+
+#downvote function
 @main.route('/pitch/downvote/<int:pitch_id>/downvote', methods = ['GET', 'POST'])
 @login_required
 def downvote(pitch_id):
@@ -98,8 +102,3 @@ def downvote(pitch_id):
     new_downvote = Downvote(pitch_id=pitch_id, user = current_user)
     new_downvote.save_downvotes()
     return redirect(url_for('main.index'))
-
-
-		
-   
-
