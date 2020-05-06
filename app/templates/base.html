@@ -1,4 +1,3 @@
-{% extends 'bootstrap/base.html' %}
 {%block styles %}
   <!--Importing the simple mde css and js files  -->
   {{ simplemde.css}}
@@ -6,9 +5,13 @@
 
 {% endblock %}
 
+{% extends 'bootstrap/base.html' %}
+
+
 <!-- Navbar block -->
 {% block navbar %}
 
     {% include 'navbar.html' %}
     
 {% endblock %}
+
