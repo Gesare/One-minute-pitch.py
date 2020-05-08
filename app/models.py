@@ -39,16 +39,13 @@ class User(UserMixin,db.Model):
 
 
 class Pitch(db.Model):
-    '''
-    '''
+    
     __tablename__ = 'pitches'
 
     id = db.Column(db.Integer, primary_key = True)
     owner_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable = False)
     description = db.Column(db.String(), index = True)
     title = db.Column(db.String())
-    # downvotes = db.Column(db.Integer, default=int(0))
-    # upvotes = db.Column(db.Integer, default=int(0))
     category = db.Column(db.String(255), nullable=False)
     comments = db.relationship('Comment',backref='pitch',lazy='dynamic')
     upvotes = db.relationship('Upvote', backref = 'pitch', lazy = 'dynamic')
@@ -108,8 +105,6 @@ class Upvote(db.Model):
 
     def __repr__(self):
         return f'{self.user_id}:{self.pitch_id}'
-
-
 
 class Downvote(db.Model):
     __tablename__ = 'downvotes'
